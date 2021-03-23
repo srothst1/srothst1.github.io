@@ -1,0 +1,228 @@
+<!-- Samuel Rothstein -->
+<!-- March, 2021 -->
+
+<!DOCTYPE html>
+
+<!-- Title -->
+<title>srothst1 Cesium Coding Challenge</title>
+<link type="text/css" rel="stylesheet" href="./index.css" />
+
+<!-- Top Nav Bar -->
+<div class="topnav">
+  <a class="active">Samuel Rothstein | March, 2021 | Cesium Coding Challenge</a>
+  <a href = "mailto: srothst1@swarthmore.edu">Email</a>
+  <a href="https://github.com/srothst1">GitHub</a>
+  <a href="https://www.linkedin.com/in/srothst1/">LinkedIn</a>
+</div>
+
+<!-- Image and text -->
+<div class="container">
+  <img src="https://i.pinimg.com/originals/4a/16/1c/4a161c0970fb72ed8695f43801939f7b.jpg" alt="Snow" style="width:100%;">
+  <div class="bottom-left">Earthquakes and Urban Areas</div>
+  <div class="top-right"> San Francisco, CA </div>
+</div>
+
+<!-- Introduction pgraph -->
+<div class="pgraph">
+  <h1>Cesium unlock potential for geospatial data. As a city planner, it is important that you undertand the dangers of natural
+  disasters such as earthquakes. While infrequent, earthquakes pose a grave dangers
+  to the vitality of your city. In this article, we explain the causes of earthquakes
+  and we use Cesium to create compelling demos that help you understand which part
+  of your city may be at risk from past natural disasters. While tools such as excell
+  make earthqake data diifuclt to understand and incaccesable, Cesium brings 3d and spacial
+  data to life - helping you to make the most informed decisions possible.</h1>
+</div>
+
+<!-- Google Maps Demo (all recent earthquakes) -->
+<div class="row">
+  <div class="columnsmall">
+    <h2 class="red-text" style="color: #bf3636;"> Fault Lines and Earthquakes </h2>
+    <p>Earthquakes often occur near fault lines... One major fault line is the
+      San Andres fault. Thus cities such as San Francsico and Los Angeles that
+      are near the fault lines often have severe earthqueks. Cities such as New York and
+      Philadelphia are further from fault lines and thus do not expiereince as
+      many earthquakes.
+     </p>
+  </div>
+  <div class="columnbig">
+    <body>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Qh-4XrgYkCzHYJFjvQastvCIRK1HF1bN" width=100% height="380"></iframe>
+    </body>
+  </div>
+  </div>
+</div>
+
+<!-- Second pgraph (fault lines)-->
+<div class="pgraph">
+  <h1>Cesium unlock potential for geospatial data. As a city planner, it is important that you undertand the dangers of natural
+  disasters such as earthquakes. While infrequent, earthquakes pose a grave dangers
+  to the vitality of your city. In this article, we explain the causes of earthquakes
+  and we use Cesium to create compelling demos that help you understand which part
+  of your city may be at risk from past natural disasters. While tools such as excell
+  make earthqake data diifuclt to understand and incaccesable, Cesium brings 3d and spacial
+  data to life - helping you to make the most informed decisions possible.</h1>
+</div>
+
+<!-- Google Maps Demo (fault lines) -->
+<div class="row">
+  <div class="columnsmall">
+    <h2 class="red-text" style="color: #bf3636;">Fault Lines and Earthquakes </h2>
+    <p>Earthquakes often occur near fault lines... One major fault line is the
+      San Andres fault. Thus cities such as San Francsico and Los Angeles that
+      are near the fault lines often have severe earthqueks. Cities such as New York and
+      Philadelphia are further from fault lines and thus do not expiereince as
+      many earthquakes.
+     </p>
+  </div>
+  <div class="columnbig">
+    <body>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1jhImZGBqVfS4oekH0pX6Jpto0Ig" width=100% height="380"></iframe>
+    </body>
+  </div>
+  </div>
+</div>
+
+<!-- Intro Cesium pgraph -->
+<div class="pgraph">
+  <h1>AAAA lot of our work at Cesium involves applying technology
+    to industries that have never seen it before
+    (think: game engine tech to make construction
+    projects faster & safer). This often requires
+    putting together demos to show how our platform
+    can solve problems for specific markets. These
+    demos are just as important in attracting new users
+    as they are in driving our products forward. The
+    prototypes you create will go on to become products
+    running on hundreds of thousands of devices.</h1>
+</div>
+
+<!-- Cesium Demo -->
+<head>
+    <!-- Update character set -->
+    <meta charset="utf-8">
+    <!-- Use latest version -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- Use Cesium library -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.79.1/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.79.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <!-- Style app -->
+    <link rel="stylesheet" href="index.css" media="screen">
+</head>
+<body>
+    <!-- Viewer Container -->
+    <div id="cesiumContainer"></div>
+    <!-- App inputs -->
+    <div class="backdrop" id="menu">
+        <h2>Cesium Toolbar</h2>
+        <span><strong>Camera Settings</strong></span>
+        <div class="nowrap">
+            <input id="freeMode" name="source" type="radio" checked/>
+            <label for="freeMode">Free Roam</label>
+        </div>
+        <div class="nowrap">
+            <input id="droneMode" name="source" type="radio"/>
+            <label for="droneMode">New York City Drone View</label>
+        </div>
+
+        <br>
+        <span><strong>Select an Earthquake!</strong></span>
+        <div class="nowrap">
+            <select id="tileStyle">
+                <option value="none">Default</option>
+                <option value="NPV">Neighborhood and Park Visibility</option>
+                <option value="ACHRS">All Current High Risk Scructures</option>
+                <option value="SFEQ">San Francisco 1906 Earthquake</option>
+                <option value="SFEQHR">San Francisco 1906 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="LBEQ">Long Beach Earthquake 1933 Earthquake</option>
+                <option value="LBEQHR">Long Beach Earthquake 1933 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="NYEQ">New York Earthquake 2001 Earthquake</option>
+                <option value="NYEQHR">New York Earthquake 2001 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="CEQ">Charleston 1886 Earthquake</option>
+                <option value="CEQHR">Charleston 1886 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+            </select>
+        </div>
+        <br>
+
+        <span><strong>Select a Display Option</strong></span>
+        <div class="nowrap">
+            <input id="shadows" type="checkbox"/>
+            <label for="shadows">3D Model Shadows</label>
+        </div>
+
+        <br>
+    </div>
+
+    <div id="loadingIndicator" class="cover">
+        <div id="loadingIcon" class="loadingIndicator"></div>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script src="Source/App.js"></script>
+
+</body>
+
+<!-- Blank double paragraph -->
+<div class="row">
+  <div class="column">
+    <h2>Lorem ipsum dolor sit amet Lorem ipsum </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+       elit. Maecenas sit amet pretium urna. Vivamus venenatis
+       velit nec neque ultricies, eget elementum magna
+       tristique. Quisque vehicula, risus eget aliquam
+       placerat, purus leo tincidunt eros, eget luctus
+       quam orci in velit. Praesent scelerisque tortor
+       sed accumsan convallis.
+       A lot of our work at Cesium involves applying technology
+      to industries that have never seen it before
+      (think: game engine tech to make construction
+      projects faster & safer). This often requires
+      putting together demos to show how our platform
+      can solve problems for specific markets. These
+      demos are just as important in attracting new users
+      as they are in driving our products forward. The
+      prototypes you create will go on to become products
+      running on hundreds of thousands of devices.
+     </p>
+  </div>
+  <div class="column">
+    <h2>Lorem ipsum dolor sit amet Lorem ipsum </h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+       elit. Maecenas sit amet pretium urna. Vivamus venenatis
+       velit nec neque ultricies, eget elementum magna
+       tristique. Quisque vehicula, risus eget aliquam
+       placerat, purus leo tincidunt eros, eget luctus
+       quam orci in velit. Praesent scelerisque tortor
+       sed accumsan convallis.
+       A lot of our work at Cesium involves applying technology
+      to industries that have never seen it before
+      (think: game engine tech to make construction
+      projects faster & safer). This often requires
+      putting together demos to show how our platform
+      can solve problems for specific markets. These
+      demos are just as important in attracting new users
+      as they are in driving our products forward. The
+      prototypes you create will go on to become products
+      running on hundreds of thousands of devices.
+     </p>
+  </div>
+  </div>
+</div>
+
+<!-- Blank paragraph -->
+<div class="pgraph">
+  <h1>A lot of our work at Cesium involves applying technology
+    to industries that have never seen it before
+    (think: game engine tech to make construction
+    projects faster & safer). This often requires
+    putting together demos to show how our platform
+    can solve problems for specific markets. These
+    demos are just as important in attracting new users
+    as they are in driving our products forward. The
+    prototypes you create will go on to become products
+    running on hundreds of thousands of devices.</h1>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Samuel Rothstein | Cesium Coding Challenge | March 2021</p>
+</footer>

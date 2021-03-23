@@ -1,0 +1,11 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \{"type":"FeatureCollection","metadata":\{"generated":1616288464000,"url":"https://earthquake.usgs.gov/fdsnws/event/1/query.geojson?starttime=2021-03-14%2000:00:00&endtime=2001-03-21%2023:59:59&maxlatitude=50&minlatitude=24.6&maxlongitude=-65&minlongitude=-125&minmagnitude=2.5&orderby=time","title":"USGS Earthquakes","status":200,"api":"1.10.3","count":0\},"features":[]\}\
+}
