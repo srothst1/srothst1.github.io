@@ -24,24 +24,14 @@
 
 <!-- Introduction pgraph -->
 <div class="pgraph">
-  <h1>Cesium unlock potential for geospatial data. As a city planner, it is important that you undertand the dangers of natural
-  disasters such as earthquakes. While infrequent, earthquakes pose a grave dangers
-  to the vitality of your city. In this article, we explain the causes of earthquakes
-  and we use Cesium to create compelling demos that help you understand which part
-  of your city may be at risk from past natural disasters. While tools such as excell
-  make earthqake data diifuclt to understand and incaccesable, Cesium brings 3d and spacial
-  data to life - helping you to make the most informed decisions possible.</h1>
+  <h1>As a city planner, city official, or an architect, it is crucial that you understand how natural disasters such as earthquakes impact your environment. While spreadsheets and slide decks provide you with raw data, these tools often fail to give you the intuition you need to make the right decision when planning for an earthquake. In this project, I showcase how tools such as Google Maps JavaScript API and CesiumJS can help you make sense of earthquake data from the United States Geological Survey. </h1>
 </div>
 
 <!-- Google Maps Demo (all recent earthquakes) -->
 <div class="row">
   <div class="columnsmall">
-    <h2 class="red-text" style="color: #bf3636;"> Fault Lines and Earthquakes </h2>
-    <p>Earthquakes often occur near fault lines... One major fault line is the
-      San Andres fault. Thus cities such as San Francsico and Los Angeles that
-      are near the fault lines often have severe earthqueks. Cities such as New York and
-      Philadelphia are further from fault lines and thus do not expiereince as
-      many earthquakes.
+    <h2 class="red-text" style="color: #bf3636;"> Recent Earthquakes in the United States </h2>
+    <p>The following figure shows all of the earthquakes that occurred in the United States in the past 30 days. Many of these earthquakes are mild. In fact, the mean earthquake magnitude is 2.55 (quite low). The most severe earthquake that occurred in the past 30 days took place in Nevada. This earthquake had a magnitude of 2.7.
      </p>
   </div>
   <div class="columnbig">
@@ -54,24 +44,14 @@
 
 <!-- Second pgraph (fault lines)-->
 <div class="pgraph">
-  <h1>Cesium unlock potential for geospatial data. As a city planner, it is important that you undertand the dangers of natural
-  disasters such as earthquakes. While infrequent, earthquakes pose a grave dangers
-  to the vitality of your city. In this article, we explain the causes of earthquakes
-  and we use Cesium to create compelling demos that help you understand which part
-  of your city may be at risk from past natural disasters. While tools such as excell
-  make earthqake data diifuclt to understand and incaccesable, Cesium brings 3d and spacial
-  data to life - helping you to make the most informed decisions possible.</h1>
+  <h1>Clearly, earthquakes are a common occurrence. During the past 30 days, the United States experienced over 100 earthquakes. While none of these earthquakes were large enough to significantly disrupt daily life, this figure reminds us that we should always be prepared for the next earthquake. </h1>
 </div>
 
 <!-- Google Maps Demo (fault lines) -->
 <div class="row">
   <div class="columnsmall">
-    <h2 class="red-text" style="color: #bf3636;">Fault Lines and Earthquakes </h2>
-    <p>Earthquakes often occur near fault lines... One major fault line is the
-      San Andres fault. Thus cities such as San Francsico and Los Angeles that
-      are near the fault lines often have severe earthqueks. Cities such as New York and
-      Philadelphia are further from fault lines and thus do not expiereince as
-      many earthquakes.
+    <h2 class="red-text" style="color: #bf3636;">Faults and Earthquakes </h2>
+    <p>This figure shows the San Andreas Fault, a continental transform fault that extends roughly 750 miles through California. The San Andreas Fault forms the tectonic boundary between the Pacific Plate and the North American Plate. Given that earthquakes often occur near fault lines, cities such as San Francisco and Los Angeles particularly vulnerable to earthquakes.
      </p>
   </div>
   <div class="columnbig">
@@ -84,16 +64,7 @@
 
 <!-- Intro Cesium pgraph -->
 <div class="pgraph">
-  <h1>AAAA lot of our work at Cesium involves applying technology
-    to industries that have never seen it before
-    (think: game engine tech to make construction
-    projects faster & safer). This often requires
-    putting together demos to show how our platform
-    can solve problems for specific markets. These
-    demos are just as important in attracting new users
-    as they are in driving our products forward. The
-    prototypes you create will go on to become products
-    running on hundreds of thousands of devices.</h1>
+  <h1>While the Google Maps JavaScript API can help us understand where recent earthquakes have occurred and the location of important natural occurrences such as fault lines, CesiumJS can be used to show us the impact of earthquakes on a more granular level. The following demo includes regional data for San Francisco, Los Angeles, New York, among other cities. In addition, this demo illustrates how the current version of each city would be impacted by a variety of destructive earthquakes that occurred in the past 100 years.</h1>
 </div>
 
 <!-- Cesium Demo -->
@@ -130,13 +101,21 @@
             <select id="tileStyle">
                 <option value="none">Default</option>
                 <option value="NPV">Neighborhood and Park Visibility</option>
-                <option value="ACHRS">All Current High Risk Scructures</option>
+                <option value="ACHRS">All Current High Risk Scructures (residential, appartment, not earthquake certified, over 3 stories, over 100 feet tall, etc.)</option>
                 <option value="SFEQ">San Francisco 1906 Earthquake</option>
                 <option value="SFEQHR">San Francisco 1906 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
-                <option value="LBEQ">Long Beach Earthquake 1933 Earthquake</option>
-                <option value="LBEQHR">Long Beach Earthquake 1933 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
-                <option value="NYEQ">New York Earthquake 2001 Earthquake</option>
-                <option value="NYEQHR">New York Earthquake 2001 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="SFEQ2">San Francisco 1989 Earthquake</option>
+                <option value="SFEQ2HR">San Francisco 1989 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="SFEQ3">San Francisco 1957 Earthquake</option>
+                <option value="SFEQ3HR">San Francisco 1957 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="LBEQ">Long Beach (Los Angeles) Earthquake 1933 Earthquake</option>
+                <option value="LBEQHR">Long Beach (Los Angeles) Earthquake 1933 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="SFLAEQ">San Fernando (Los Angeles) Earthquake 1971 Earthquake</option>
+                <option value="SFLAEQHR">San Fernando (Los Angeles) Earthquake 1971 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="NYEQ">New York Earthquake (October) 2001 Earthquake</option>
+                <option value="NYEQHR">New York Earthquake (October) 2001 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
+                <option value="NYEQ2">New York Earthquake (January) 2001 Earthquake</option>
+                <option value="NYEQ2HR">New York Earthquake (January) 2001 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
                 <option value="CEQ">Charleston 1886 Earthquake</option>
                 <option value="CEQHR">Charleston 1886 Earthquake - Possible High Risk (residential, appartment, not earthquake certified, etc.)</option>
             </select>
@@ -161,65 +140,37 @@
 
 </body>
 
+<!-- https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iJMRWBqJe7WA/v1/-1x-1.jpg -->
+
 <!-- Blank double paragraph -->
 <div class="row">
   <div class="column">
-    <h2>Lorem ipsum dolor sit amet Lorem ipsum </h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-       elit. Maecenas sit amet pretium urna. Vivamus venenatis
-       velit nec neque ultricies, eget elementum magna
-       tristique. Quisque vehicula, risus eget aliquam
-       placerat, purus leo tincidunt eros, eget luctus
-       quam orci in velit. Praesent scelerisque tortor
-       sed accumsan convallis.
-       A lot of our work at Cesium involves applying technology
-      to industries that have never seen it before
-      (think: game engine tech to make construction
-      projects faster & safer). This often requires
-      putting together demos to show how our platform
-      can solve problems for specific markets. These
-      demos are just as important in attracting new users
-      as they are in driving our products forward. The
-      prototypes you create will go on to become products
-      running on hundreds of thousands of devices.
+    <h2> CesiumJS Functionality </h2>
+    <p>
+      -Select buildings to view information (height, location, etc.)
+    </p>
+    <p>
+      -Select neighborhoods to view name and location
+    </p>
+    <p>
+      -Select public parks to view name and location
+    </p>
+    <p>
+      -See toolbar for other details!
      </p>
   </div>
   <div class="column">
-    <h2>Lorem ipsum dolor sit amet Lorem ipsum </h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-       elit. Maecenas sit amet pretium urna. Vivamus venenatis
-       velit nec neque ultricies, eget elementum magna
-       tristique. Quisque vehicula, risus eget aliquam
-       placerat, purus leo tincidunt eros, eget luctus
-       quam orci in velit. Praesent scelerisque tortor
-       sed accumsan convallis.
-       A lot of our work at Cesium involves applying technology
-      to industries that have never seen it before
-      (think: game engine tech to make construction
-      projects faster & safer). This often requires
-      putting together demos to show how our platform
-      can solve problems for specific markets. These
-      demos are just as important in attracting new users
-      as they are in driving our products forward. The
-      prototypes you create will go on to become products
-      running on hundreds of thousands of devices.
-     </p>
+    <div class="container">
+      <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iJMRWBqJe7WA/v1/-1x-1.jpg" alt="Snow" style="width:100%;">
+      <div class="top-right"> Los Angeles, CA </div>
+    </div>
   </div>
   </div>
 </div>
 
 <!-- Blank paragraph -->
 <div class="pgraph">
-  <h1>A lot of our work at Cesium involves applying technology
-    to industries that have never seen it before
-    (think: game engine tech to make construction
-    projects faster & safer). This often requires
-    putting together demos to show how our platform
-    can solve problems for specific markets. These
-    demos are just as important in attracting new users
-    as they are in driving our products forward. The
-    prototypes you create will go on to become products
-    running on hundreds of thousands of devices.</h1>
+  <h1>Thank you for viewing my demo! Please let me know if you have any question or concerns. I really enjoyed using CesiumJS to create this demo! The CesiumJS library has so much interesting functionality that I hope to keep exploring. There are a few more things that I would love to implement into this project in the near future (see TODO in repository).</h1>
 </div>
 
 <!-- Footer -->

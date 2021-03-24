@@ -327,9 +327,7 @@
     //////////////////////////////////////////////////////////////////////////
     // Load and Style 3D Tileset
     //TODO: update earthquake radius gradient
-    //TODO: add more earthquakes (at least one more in SF)
     //TODO: add feature picking -> select a building and give a risk assesment
-    //TODO: fix high-risk buildings filter
     //////////////////////////////////////////////////////////////////////////
 
     // Load buildings for all locations
@@ -346,13 +344,9 @@
         show : true
     });
 
-    //TODO: Define a style in which buildings are colored by proximity to earthquake
+    //TODO: Buildings that are residential, appartment, tall, etc.
     var currentHighRisk = new Cesium.Cesium3DTileStyle({
-      color : {
-          conditions : [
-              ['${elementId} >= -100000', false],
-          ]
-      }
+        show: "${feature['building']} === 'residential' || ${feature['building']} === 'apartments' || ${feature['cesium#estimatedHeight']} >= 100"
     });
 
     //NEW: sanFrancisco1906Earthquake
@@ -369,7 +363,7 @@
           ["${distanceFromComplex} > 0.001", "color('#f58971')"],
           ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
           ["true", "color('#ff0000')"],
-        ],
+        ]
       }
     });
 
@@ -378,6 +372,80 @@
       defines: {
         distanceFromComplex:
         "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-122.44182,37.80474))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ],
+      },
+      show: "${feature['building']} === 'residential' || ${feature['building']} === 'apartments' || ${feature['building']} === 'commercial'"
+    });
+
+    //NEW: sanFrancisco1989Earthquake
+    var sanFrancisco1989Earthquake = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-122.39465,37.75796))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ]
+      }
+    });
+
+    //NEW: sanFrancisco1989Earthquake
+    var sanFrancisco1989EarthquakeHighRisk = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-122.39465,37.75796))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ],
+      },
+      show: "${feature['building']} === 'residential' || ${feature['building']} === 'apartments' || ${feature['building']} === 'commercial'"
+    });
+
+    //NEW: sanFrancisco1957Earthquake
+    var sanFrancisco1957Earthquake = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-122.47235,37.71336))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ]
+      }
+    });
+
+    //NEW: sanFrancisco1957Earthquake
+    var sanFrancisco1957EarthquakeHighRisk = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-122.47235,37.71336))"
       },
       color: {
         conditions: [
@@ -429,6 +497,43 @@
         show: "${feature['building']} === 'residential' || ${feature['building']} === 'apartments' || ${feature['building']} === 'commercial'"
     });
 
+    //NEW: sanFernando1971Earthquake
+    var sanFernando1971Earthquake = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-118.47878,34.18161))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ],
+      }
+    });
+
+    //NEW: sanFernando1971Earthquake
+    var sanFernando1971EarthquakeHighRisk = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-118.47878,34.18161))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ],
+      },
+        show: "${feature['building']} === 'residential' || ${feature['building']} === 'apartments' || ${feature['building']} === 'commercial'"
+    });
+
     //NEW: newYorkCity2001Earthquake
     var newYorkCity2001Earthquake = new Cesium.Cesium3DTileStyle({
       defines: {
@@ -452,6 +557,43 @@
       defines: {
         distanceFromComplex:
         "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-73.95761,40.82189))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ],
+      },
+        show: "${feature['building']} === 'residential' || ${feature['building']} === 'apartments' || ${feature['building']} === 'commercial'"
+    });
+
+    //NEW: newYorkCity022001Earthquake
+    var newYorkCity022001Earthquake = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-73.93684,40.75384))"
+      },
+      color: {
+        conditions: [
+          ["${distanceFromComplex} > 0.1", "color('#006400')"],
+          ["${distanceFromComplex} > 0.06", "color('#90ee90')"],
+          ["${distanceFromComplex} > 0.03", "color('#f5af71')"],
+          ["${distanceFromComplex} > 0.001", "color('#f58971')"],
+          ["${distanceFromComplex} > 0.005", "color('#d65c5c')"],
+          ["true", "color('#ff0000')"],
+        ],
+      }
+    });
+
+    //NEW: newYorkCity022001Earthquake
+    var newYorkCity022001EarthquakeHighRisk = new Cesium.Cesium3DTileStyle({
+      defines: {
+        distanceFromComplex:
+        "distance(vec2(${feature['cesium#longitude']}, ${feature['cesium#latitude']}), vec2(-73.93684,40.75384))"
       },
       color: {
         conditions: [
@@ -521,18 +663,42 @@
         } else if (selectedStyle === 'SFEQHR') {
             console.log("SFEQHR")
             city.style = sanFrancisco1906EarthquakeHighRisk;
+        } else if (selectedStyle === 'SFEQ2') {
+            console.log("SFEQ2")
+            city.style = sanFrancisco1989Earthquake;
+        } else if (selectedStyle === 'SFEQ2HR') {
+            console.log("SFEQ2HR")
+            city.style = sanFrancisco1989EarthquakeHighRisk;
+        } else if (selectedStyle === 'SFEQ3') {
+            console.log("SFEQ3")
+            city.style = sanFrancisco1957Earthquake;
+        } else if (selectedStyle === 'SFEQ3HR') {
+            console.log("SFEQ3HR")
+            city.style = sanFrancisco1957EarthquakeHighRisk;
         } else if (selectedStyle === 'LBEQ') {
             console.log("LBEQ")
             city.style = longBeach1933Earthquake;
         } else if (selectedStyle === 'LBEQHR') {
             console.log("LBQHR")
             city.style = longBeach1933EarthquakeHighRisk;
+        } else if (selectedStyle === 'SFLAEQ') {
+            console.log("SFLAEQ")
+            city.style = sanFernando1971Earthquake;
+        } else if (selectedStyle === 'SFLAEQHR') {
+            console.log("SFLAEQHR")
+            city.style = sanFernando1971EarthquakeHighRisk;
         } else if (selectedStyle === 'NYEQ') {
             console.log("NYEQ")
             city.style = newYorkCity2001Earthquake;
         } else if (selectedStyle === 'NYEQHR') {
             console.log("NYEQHR")
             city.style = newYorkCity2001EarthquakeHighRisk;
+        } else if (selectedStyle === 'NYEQ2') {
+            console.log("NYEQ2")
+            city.style = newYorkCity022001Earthquake;
+        } else if (selectedStyle === 'NYEQ2HR') {
+            console.log("NYEQ2HR")
+            city.style = newYorkCity022001EarthquakeHighRisk;
         } else if (selectedStyle === 'CEQ') {
             console.log("CEQ")
             city.style = charleston1886Earthquake;
