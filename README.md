@@ -1,19 +1,5 @@
-# cesium-workshop
-
-<p align="center">
-    <a href="http://cesiumjs.org/">
-        <img src="https://github.com/AnalyticalGraphicsInc/cesium/wiki/logos/Cesium_Logo_Color.jpg" width="50%" />
-    </a>
-</p>
-
-A simple JavaScript app showcasing some features of [Cesium](http://cesium.com/cesiumjs), the open-source WebGL virtual globe and map engine. Learn more about this code by reading our [associated tutorial](https://cesiumjs.org/tutorials/Cesium-Workshop/).
-
-**License**: Apache 2.0.  Free for commercial and non-commercial use.  See [LICENSE.md](LICENSE.md).
-
-This application is intended to introduce the main features of Cesium in context, but it is by no means exhaustive. Feel free to fork and modify this example however you'd like.
-
-Local server
-------------
+This app can be run from a web browser using the following link: https://srothst1.github.io/
+This app can also be run as follows:
 
 This app comes with a simple server ([`server.js`](./server.js)), but can be served through any means.
 
