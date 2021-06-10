@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmMTE4OTBkZi03Zjk4LTRjYmQtODk0MC1hNmQ0NTZiMTNjN2YiLCJpZCI6NTc3MzMsImlhdCI6MTYyMjU2NzkwNn0.XzpKx-KrkoFvL7JMHn4qfLtb3bq39mQlKRsTvRcWxCs';
+    Cesium.Ion.defaultAccessToken = '<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmMTE4OTBkZi03Zjk4LTRjYmQtODk0MC1hNmQ0NTZiMTNjN2YiLCJpZCI6NTc3MzMsImlhdCI6MTYyMjU2NzkwNn0.XzpKx-KrkoFvL7JMHn4qfLtb3bq39mQlKRsTvRcWxCs>';
     
     // Create the Cesium Viewer
     var viewer = new Cesium.Viewer('cesiumContainer', {
