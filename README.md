@@ -1,41 +1,43 @@
-This app can be run from a web browser using the following link: https://srothst1.github.io/
-This app can also be run as follows:
+# California Air Quality Index Visualization
 
-This app comes with a simple server ([`server.js`](./server.js)), but can be served through any means.
+This project uses CesiumJS, Google Maps, to visualize fires and AQI data in the state of California. The open-source project [SoCalAirQuality](https://github.com/ian-r-rose/SoCalAirQuality) is also highlighted. SoCalAirQuality provides a simple way for people to track the air quality index of a given region on Twitter.
 
-To use the packaged server:
+### Running this application
 
-* Install [node.js](http://nodejs.org/)
-* From the `cesium-workshop` root directory, run
+First, clone this repository. Next run:
 ```
 npm install
 npm start
 ```
 
-Browse to `http://localhost:8080/`
+and navigate to `localhost:8080`.
 
->Have python installed?  If so, from the `cesium-workshop` root directory run
->```
->python -m SimpleHTTPServer 8080
->```
->(Starting with Python 3, use `python -m http.server 8080`).
->
->Browse to `http://localhost:8080/`
+### Screenshots
 
-What's here?
-------------
+![image](https://user-images.githubusercontent.com/39531367/133108520-1a90e288-e285-48e8-8d73-ed7e09ada6b5.png)
 
-* [index.html](index.html) - A simple HTML page. Run a local web server, and browse to index.html to run your app, which will show our sample application.
-* [Source](Source/) - Contains [App.js](Source/App.js) which is referenced from index.html.  This is where the app's code goes.
-* [server.js](server.js) - A simple node.js server for serving your Cesium app.  See the **Local server** section.
-* [package.json](package.json) - Dependencies for the node.js server.
-* [LICENSE](LICENSE.md) - A license file already referencing Cesium as a third-party.  This starter app is licensed with [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) (free for commercial and non-commercial use).  You can, of course, license your code however you want.
-* [.gitignore](.gitignore) - A small list of files not to include in the git repo.  Add to this as needed.
+![image](https://user-images.githubusercontent.com/39531367/132901053-711ae4e8-3814-4018-80dd-b9b0535174b6.png)
 
-Cesium resources
-----------------
+![image](https://user-images.githubusercontent.com/39531367/133159194-103c6a04-6c52-419f-b649-1f5725bc3272.png)
 
-* [Reference Documentation](https://cesium.com/docs/cesiumjs-ref-doc/) : A complete guide to the Cesium API containing many code snippets.
-* [Sandcastle](https://sandcastle.cesium.com/) : A live-coding environment with a large gallery of code examples.
-* [Tutorials](https://cesium.com/docs/) : Detailed introductions to areas of Cesium development.
-* [Cesium Forum](https://groups.google.com/forum/?hl=en#!forum/cesium-dev) : A resource for asking and answering Cesium-related questions.
+### Available scripts
+
+* `npm start` - Runs a webpack build with `webpack.config.js` and starts a development server
+* `npm run build` - Runs a webpack build with `webpack.config.js` 
+
+### Import named modules from Cesium
+
+```
+import { Color } from 'cesium';
+var c = Color.fromRandom();
+```
+
+### Import Cesium static asset files
+
+```
+import "cesium/Build/Cesium/Widgets/widgets.css";
+```
+
+### Contributions
+
+Pull requests are appreciated. Please use the same Contributor License Agreement (CLA)
