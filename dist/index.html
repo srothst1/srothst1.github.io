@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script defer src="app.js"></script></head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Visualizing Air Quality Index Data in California</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="mailto: srothst1@gmail.com">Email</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/srothst1/california-aqi-visualization">GitHub</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/srothst1/">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Intro text -->
+  <div class="container-xxl" style="padding: 5px;">
+    <div class="card mb-3">
+      <img src="../images/sunset.jpg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">The Air Quality Index impacts the daily life of California residents.</h5>
+        <p class="card-text">It can determine which outdoor activities are safe on any given day. Recently, the quality of the air in California has been impacted by a spree of wildfires. The goal of this project is to use 3D and geospatial APIs to showcase wildfire and air quality data and help them understand how these metrics can impact their life.</p>
+        <h5 class="card-title">How does the Air Quality Index (AQI) work?</h5>
+        <p class="card-text">Think of the AQI as a yardstick that runs from 0 to 500. The higher the AQI value, the greater the level of air pollution and the greater the health concern. For example, an AQI value of 50 or below represents good air quality, while an AQI value over 300 represents hazardous air quality. For each pollutant an AQI value of 100 generally corresponds to an ambient air concentration that equals the level of the short-term national ambient air quality standard for protection of public health. AQI values at or below 100 are generally thought of as satisfactory. When AQI values are above 100, air quality is unhealthy: at first for certain sensitive groups of people, then for everyone as AQI values get higher. The AQI is divided into six categories. Each category corresponds to a different level of health concern. Each category also has a specific color. The color makes it easy for people to quickly determine whether air quality is reaching unhealthy levels in their communities.</p>
+        <h5 class="card-title">Air Pollutants and Health Effects</h5>
+        <p class="card-text">Poor air quality can irritate the eyes, nose, and throat, cause shortness of breath, aggravate asthma and other respiratory conditions, and affect the heart and cardiovascular system. Breathing polluted air for long periods of time can cause more serious problems.</p>
+        <p class="card-text"><small class="text-muted">Updated February 2022</small></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CesiumJS container  -->
+  <div class="container-xxl" style="padding: 15px;">
+    <div id="cesiumContainer"></div>
+    <div class="card-body">
+      <h5 class="card-title">CesiumJS</h5>
+      <p class="card-text">CesiumJS is an open-source JavaScript library for viewing and creating 3D globes and maps. Here, we are leveraging CesiumJS to view AQI readings at various location throughout California. Select a cloud to learn more about the data that you are viewing at that location. If you zoom in, you will notice that clouds are displayed above the terrain. The darkness of these clouds indicates the quality of the air in a given region. These clouds are an intuitive way of visualizing how poor air quality can impact our environment.</p>
+    </div>  
+  </div>
+
+  <!-- Twitter Feed and Text -->
+  <div class="container-xxl" style="padding: 15px;">
+    <div class="row" style="height: 400px;">
+      <div class="col-4">
+      <div class="card" style="width: 100%; height: 100%">
+        <div class="card-body">
+          <h5 class="card-title">LAAirQualityBot</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Created by @ian-r-rose</h6>
+          <p class="card-text">The LAAirQualityBot, created by @ian-r-rose, scrapes AQI and fire data in Southern California from a variety of sources. Then, it publishing data for Southern California Air Quality to a Twitter account called @LAAirQualityBot. This allows local communities to get live updates about fires in their area and AQI data.</p>
+        </div>
+      </div>
+      </div>
+      <div class="col-8">
+        <a class="twitter-timeline" data-lang="en" width=100% height=100% data-theme="dark" href="https://twitter.com/LAAirQualityBot?ref_src=twsrc%5Etfw">Tweets by LAAirQualityBot</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Maps API and Text -->
+  <div class="container-xxl" style="padding: 15px;">
+    <div class="row" style="height: 400px;">
+      <div class="col-8">
+        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1Cb49xdk76Mc-pJKnO88giGNK7SHnIN2O&ehbc=2E312F" width=100% height=100% display: inline-block;></iframe>
+      </div>
+      <div class="col-4">
+      <div class="card" style="width: 100%; height: 100%">
+        <div class="card-body">
+          <h5 class="card-title">Google Maps API</h5>
+          <p class="card-text">Here, I am using the Google Maps API to show recently active wildfires. Select a fire to learn more. As noted above, wildfires can cause poor air quality if smokey air is blown towards a given region. Checkout the following resources on fires and AQI:</p>
+          <a href="https://www.airnow.gov/fires/" class="card-link">AirNow</a>
+          <a href="https://ehs.stanford.edu/wildfire-smoke" class="card-link">EHS Stanford</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info about APIs -->
+  <div class="container" style="padding: 15px;">
+    <div class="row">
+      <div class="col">
+        <div class="card text-center bg-light border-secondary" style="height: 100%;">
+          <div class="card-header">
+            CesiumJS
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">3D geospatial visualization for the web</h5>
+            <p class="card-text">CesiumJS is an open source JavaScript library for creating world-class 3D globes and maps with the best possible performance, precision, visual quality, and ease of use. Developers across industries, from aerospace to smart cities to drones, use CesiumJS to create interactive web apps for sharing dynamic geospatial data.</p>
+            <a href="https://github.com/CesiumGS/cesium" class="btn btn-primary">Learn more</a>
+          </div>
+        </div>
+      </div>
+    <div class="col">
+      <div class="card text-center bg-light border-secondary" style="height: 100%;">
+        <div class="card-header">
+          Google Maps API
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Build awesome apps with Google’s knowledge of the real world</h5>
+          <p class="card-text">The Google Maps API can be used as a simple tool to leverage all sorts of geospatial data. Government data sources can often easily be viewed with the Google Maps API.</p>
+          <a href="https://developers.google.com/maps" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-light border-secondary" style="height: 100%;">
+        <div class="card-header">
+          LAAirQualityBot
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Scraping and publishing data for Southern California Air Quality</h5>
+          <p class="card-text">Please support this project and continue to learn more about spreading awareness about AQI.</p>
+          <a href="https://github.com/ian-r-rose/SoCalAirQuality" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  <br>
+  <footer class="page-footer font-small pt-4 bg-light">
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Getting involved</h5>
+          <p>I would love to collaborate with other developers on this project. If you are passionate about geospatial application, climate change, or environmentalism rit large, please do not hesitate to reach out!</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mb-md-0 mb-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Thank you!</h5>
+          <p>Please provide feedback! I am also happy to take a look at other datasets (if you find something great!)</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+      <a href="https://github.com/srothst1"> srothst1</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
